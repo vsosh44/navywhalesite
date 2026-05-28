@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navy Whale — Armwrestling Sports Team Merch</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --accent: #00D2BE;
+      --gray: #8d8d8d;
+      --dark: #080808;
+      --card: #101010;
+      --line: rgba(0, 210, 190, 0.34);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(0, 210, 190, 0.13), transparent 34%),
+        radial-gradient(circle at 82% 18%, rgba(0, 210, 190, 0.09), transparent 32%),
+        linear-gradient(180deg, #000000 0%, #050505 45%, #000000 100%);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 88px;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 16px rgba(0, 210, 190, 0.23));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-title {
+      font-family: "Anton", sans-serif;
+      letter-spacing: 0.08em;
+      font-size: 23px;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      margin-top: 5px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(0, 210, 190, 0.42);
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.03);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: rgba(0, 210, 190, 0.12);
+      box-shadow: 0 0 24px rgba(0, 210, 190, 0.24);
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: center;
+      padding: 92px 0 80px;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 14px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 7px),
+        radial-gradient(circle at 80% 20%, rgba(0,210,190,0.20), transparent 30%),
+        linear-gradient(125deg, #020202 0%, #111111 40%, #000000 100%);
+      opacity: 0.95;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      z-index: -2;
+      background:
+        conic-gradient(from 140deg, transparent, rgba(0, 210, 190, 0.16), transparent 18%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 45%);
+      animation: slowSpin 18s linear infinite;
+      opacity: 0.65;
+    }
+
+    @keyframes slowSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(0, 210, 190, 0.08);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+    }
+
+    h1 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(54px, 9vw, 118px);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      max-width: 800px;
+    }
+
+    .accent {
+      color: var(--accent);
+      text-shadow: 0 0 34px rgba(0, 210, 190, 0.28);
+    }
+
+    .hero-lead {
+      margin-top: 28px;
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--black);
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, color 0.22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0, 210, 190, 0.28);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: rgba(0, 210, 190, 0.12);
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-emblem {
+      width: min(420px, 88vw);
+      padding: 42px;
+      border: 1px solid rgba(0, 210, 190, 0.3);
+      border-radius: 38px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.025)),
+        rgba(8, 8, 8, 0.72);
+      box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 0 60px rgba(0, 210, 190, 0.13);
+      transform: rotate(-2deg);
+    }
+
+    .hero-emblem img {
+      filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.8));
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 0;
+      bottom: 58px;
+      max-width: 230px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 22px 54px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-badge strong {
+      display: block;
+      color: var(--accent);
+      font-size: 24px;
+      font-family: "Anton", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    /* Notice */
+
+    .notice-section {
+      padding: 42px 0;
+      background: linear-gradient(90deg, rgba(0, 210, 190, 0.17), rgba(255, 255, 255, 0.04), rgba(0, 210, 190, 0.17));
+      border-top: 1px solid rgba(0, 210, 190, 0.35);
+      border-bottom: 1px solid rgba(0, 210, 190, 0.35);
+    }
+
+    .notice {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      padding: 26px 30px;
+      border: 1px solid rgba(0, 210, 190, 0.48);
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(0, 210, 190, 0.16), rgba(0, 0, 0, 0.72)),
+        #050505;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    .notice-icon {
+      flex: 0 0 58px;
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--black);
+      background: var(--accent);
+      box-shadow: 0 0 34px rgba(0, 210, 190, 0.38);
+    }
+
+    .notice-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    .notice p {
+      font-size: clamp(22px, 3.2vw, 40px);
+      line-height: 1.1;
+      font-family: "Anton", sans-serif;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    /* Products */
+
+    .products {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .section-description {
+      max-width: 430px;
+      color: rgba(255, 255, 255, 0.66);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.015)),
+        var(--card);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.45);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 20% 0%, rgba(0, 210, 190, 0.16), transparent 34%);
+      opacity: 0;
+      transition: opacity 0.24s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: rgba(0, 210, 190, 0.58);
+      box-shadow:
+        0 34px 90px rgba(0, 0, 0, 0.68),
+        0 0 40px rgba(0, 210, 190, 0.14);
+    }
+
+    .product-card:hover::before {
+      opacity: 1;
+    }
+
+    .product-image {
+      height: 280px;
+      margin: 16px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      background:
+        linear-gradient(135deg, #343434, #171717),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 8px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .product-image::after {
+      content: "Фото готового изделия при заказе";
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.68);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.78);
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .product-image svg {
+      width: 92px;
+      height: 92px;
+      color: rgba(255, 255, 255, 0.62);
+      filter: drop-shadow(0 0 20px rgba(0, 210, 190, 0.18));
+    }
+
+    .product-content {
+      padding: 8px 24px 26px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .made {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(0, 210, 190, 0.42);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(0, 210, 190, 0.07);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .made svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    .product-title {
+      min-height: 64px;
+      font-size: 24px;
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .price {
+      font-family: "Anton", sans-serif;
+      color: var(--white);
+      font-size: 34px;
+      letter-spacing: 0.03em;
+    }
+
+    .order-btn {
+      min-height: 46px;
+      padding: 0 18px;
+      font-size: 13px;
+    }
+
+    /* Contacts */
+
+    .contacts {
+      padding: 90px 0;
+      background:
+        radial-gradient(circle at 15% 35%, rgba(0, 210, 190, 0.11), transparent 28%),
+        linear-gradient(180deg, #050505, #000000);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: stretch;
+      padding: 34px;
+      border: 1px solid rgba(0, 210, 190, 0.28);
+      border-radius: 34px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.015)),
+        rgba(10, 10, 10, 0.78);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-panel h2 {
+      font-family: "Anton", sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-panel p {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.72);
+      font-size: 18px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    .contact-box {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      background: rgba(0,0,0,0.36);
+      padding: 26px;
+    }
+
+    .contact-box-title {
+      color: var(--accent);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      transition: color 0.2s ease;
+    }
+
+    .contact-box a:hover {
+      color: var(--accent);
+    }
+
+    .contact-box .socials {
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: #000;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      color: rgba(255,255,255,0.64);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 980px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+
+      .nav-wrap {
+        width: 100%;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+      }
+
+      .hero-badge {
+        right: 24px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-title {
+        min-height: auto;
+      }
+
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .brand-logo {
+        width: 54px;
+        height: 54px;
+      }
+
+      .brand-title {
+        font-size: 20px;
+      }
+
+      .brand-subtitle {
+        font-size: 9px;
+      }
+
+      .nav-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .nav a {
+        font-size: 12px;
+      }
+
+      .socials {
+        gap: 8px;
+      }
+
+      .social-link {
+        width: 36px;
+        height: 36px;
+      }
+
+      .hero {
+        padding: 58px 0 62px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .hero-emblem {
+        padding: 28px;
+        border-radius: 28px;
+      }
+
+      .hero-badge {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: -40px;
+        justify-self: end;
+      }
+
+      .notice {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+      }
+
+      .product-image {
+        height: 240px;
+      }
+
+      .price-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .order-btn {
+        width: 100%;
+      }
+
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="container header-inner">
+        <a href="#top" class="brand" aria-label="Navy Whale">
+          <img class="brand-logo" src="navy-whale-logo.png" alt="Логотип Navy Whale">
+          <span class="brand-text">
+            <span class="brand-title">Navy Whale</span>
+            <span class="brand-subtitle">Armwrestling Team</span>
+          </span>
+        </a>
+
+        <div class="nav-wrap">
+          <nav class="nav" aria-label="Основная навигация">
+            <a href="#top">Главная</a>
+            <a href="#products">Товары</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+
+          <div class="socials" aria-label="Социальные сети">
+            <a class="social-link" href="https://t.me/navywhale_ru" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.04 15.47 8.65 20.9c.56 0 .8-.24 1.09-.52l2.62-2.51 5.43 3.98c1 .55 1.7.26 1.97-.92l3.57-16.73c.32-1.47-.53-2.05-1.5-1.69L.85 10.54c-1.43.56-1.41 1.37-.24 1.73l5.36 1.67L18.42 6.1c.59-.39 1.12-.17.68.22L9.04 15.47Z"/></svg>
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@navywhale.ru?_r=1&_t=ZG-93h8pvAOAEL" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1.8c.36 3.05 2.08 4.87 5.1 5.06v3.44a8.55 8.55 0 0 1-5-1.55v6.45c0 8.2-8.94 10.76-12.53 4.88-2.31-3.79-.9-10.45 6.51-10.72v3.63c-.5.08-1.04.2-1.53.37-1.47.5-2.3 1.43-2.07 3.07.43 3.13 6.18 4.06 5.7-2.06V1.8h3.82Z"/></svg>
+            </a>
+            <a class="social-link" href="https://vk.ru/navywhale_ru" target="_blank" rel="noopener" aria-label="VK">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.92 17.92c-7.86 0-12.34-5.39-12.53-14.36h3.94c.13 6.58 3.03 9.37 5.32 9.94V3.56h3.71v5.68c2.26-.24 4.64-2.84 5.44-5.68h3.71c-.61 3.5-3.2 6.1-5.04 7.17 1.84.87 4.79 3.14 5.91 7.19h-4.08c-.87-2.72-3.05-4.82-5.94-5.1v5.1h-.44Z"/></svg>
+            </a>
+            <a class="social-link" href="https://youtube.com/@navywhale_ru?si=rK4DNIDn48uWjLm-" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.13C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.13c1.85.51 9.4.51 9.4.51s7.55 0 9.4-.5a3 3 0 0 0 2.1-2.14A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow">Made to order merch</div>
+            <h1>
+              Сила в хвате. <br>
+              Характер в деталях. <br>
+              <span class="accent">Ручная работа.</span>
+            </h1>
+            <p class="hero-lead">
+              Мерч Navy Whale создан для тех, кто знает цену давлению, выдержке и честной борьбе.
+              Минималистичная экипировка с атлетичным силуэтом, плотной визуальной фактурой и неоновым акцентом команды.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#products">Смотреть товары</a>
+              <a class="btn btn-outline" href="https://t.me/navywhale_ru" target="_blank" rel="noopener">Заказать в Telegram</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-emblem">
+              <img src="navy-whale-logo.png" alt="Navy Whale Armwrestling Sports Team">
+            </div>
+            <div class="hero-badge">
+              <strong>NW Gear</strong>
+              <span>Командный мерч для спортсменов, фанатов и тех, кто держит хват до конца.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notice-section" aria-label="Условие заказа">
+        <div class="container">
+          <div class="notice">
+            <div class="notice-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 8.3 15.7 2.3a1 1 0 0 0-1.4 0l-2.1 2.1 7.4 7.4 2.1-2.1a1 1 0 0 0 0-1.4ZM3 13.6V21h7.4l7.8-7.8-7.4-7.4L3 13.6Zm5.9 5.4H5v-3.9l5.8-5.8 3.9 3.9L8.9 19Z"/></svg>
+            </div>
+            <p>Вся одежда выполнена ручной работой и продаётся исключительно на заказ</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="products" id="products">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker">Товары</div>
+              <h2 class="section-title">Премиальный мерч Navy Whale</h2>
+            </div>
+            <p class="section-description">
+              Ровно три позиции. Без массового склада. Каждое изделие готовится под заказ после связи в Telegram.
+            </p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <div class="product-image" aria-label="Заглушка изображения футболки">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M16.5 3 21 5.25V10h-3v11H6V10H3V5.25L7.5 3H10c.25 1.05 1.07 1.75 2 1.75s1.75-.7 2-1.75h2.5Z"/>
+                </svg>
+              </div>
+              <div class="product-content">
+                <div class="made">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 8.3-6-6a1 1 0 0 0-1.4 0L3 13.6V21h7.4L21.7 9.7a1 1 0 0 0 0-1.4Z"/></svg>
+                  Ручная работа / Made to order
+                </div>
+                <h3 class="product-title">NW Classic</h3>
+                <div class="price-row">
+                  <div class="price">1500₽</div>
+                  <a class="btn order-btn" href="#contacts">Заказать</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image" aria-label="Заглушка изображения футболки">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M16.5 3 21 5.25V10h-3v11H6V10H3V5.25L7.5 3H10c.25 1.05 1.07 1.75 2 1.75s1.75-.7 2-1.75h2.5Z"/>
+                </svg>
+              </div>
+              <div class="product-content">
+                <div class="made">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 8.3-6-6a1 1 0 0 0-1.4 0L3 13.6V21h7.4L21.7 9.7a1 1 0 0 0 0-1.4Z"/></svg>
+                  Ручная работа / Made to order
+                </div>
+                <h3 class="product-title">Футболка NW Master of the Deep Grip</h3>
+                <div class="price-row">
+                  <div class="price">2500₽</div>
+                  <a class="btn order-btn" href="#contacts">Заказать</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-image" aria-label="Заглушка изображения бейсболки">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M12 4c4.42 0 8 2.69 8 6v2.2c1.24.5 2 1.18 2 1.8 0 1.1-2.24 2-5 2H4.75C3.23 16 2 14.77 2 13.25 2 11.45 4.16 10 6 10c0-3.31 1.58-6 6-6Zm-4 8h10v-2c0-2.1-2.68-4-6-4s-4 1.9-4 4v2Zm-3.25 2H17c.74 0 1.45-.09 2.06-.22-.44-.2-.98-.37-1.58-.5H6c-1.1 0-2 .72-2 1.47 0 .14.03.25.09.33.12.16.34.25.66.25Z"/>
+                </svg>
+              </div>
+              <div class="product-content">
+                <div class="made">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21.7 8.3-6-6a1 1 0 0 0-1.4 0L3 13.6V21h7.4L21.7 9.7a1 1 0 0 0 0-1.4Z"/></svg>
+                  Ручная работа / Made to order
+                </div>
+                <h3 class="product-title">Бейсболка NW Master of the Deep Grip</h3>
+                <div class="price-row">
+                  <div class="price">1000₽</div>
+                  <a class="btn order-btn" href="#contacts">Заказать</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <div class="contact-panel">
+            <div>
+              <div class="section-kicker">Оформление заказа</div>
+              <h2>Свяжитесь с нами в Telegram для оформления заказа</h2>
+              <p>
+                Платёжного функционала на сайте нет. Напишите нам, уточните размер, модель, детали изготовления и сроки.
+              </p>
+              <div class="hero-actions">
+                <a class="btn" href="https://t.me/navywhale_ru" target="_blank" rel="noopener">Написать в Telegram</a>
+                <a class="btn btn-outline" href="mailto:order@navywhale-merch.ru">order@navywhale-merch.ru</a>
+              </div>
+            </div>
+
+            <div class="contact-box">
+              <div class="contact-box-title">Соцсети команды</div>
+              <a href="https://t.me/navywhale_ru" target="_blank" rel="noopener">Telegram: @navywhale_ru</a>
+              <a href="mailto:order@navywhale-merch.ru">Почта: order@navywhale-merch.ru</a>
+
+              <div class="socials">
+                <a class="social-link" href="https://t.me/navywhale_ru" target="_blank" rel="noopener" aria-label="Telegram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.04 15.47 8.65 20.9c.56 0 .8-.24 1.09-.52l2.62-2.51 5.43 3.98c1 .55 1.7.26 1.97-.92l3.57-16.73c.32-1.47-.53-2.05-1.5-1.69L.85 10.54c-1.43.56-1.41 1.37-.24 1.73l5.36 1.67L18.42 6.1c.59-.39 1.12-.17.68.22L9.04 15.47Z"/></svg>
+                </a>
+                <a class="social-link" href="https://www.tiktok.com/@navywhale.ru?_r=1&_t=ZG-93h8pvAOAEL" target="_blank" rel="noopener" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1.8c.36 3.05 2.08 4.87 5.1 5.06v3.44a8.55 8.55 0 0 1-5-1.55v6.45c0 8.2-8.94 10.76-12.53 4.88-2.31-3.79-.9-10.45 6.51-10.72v3.63c-.5.08-1.04.2-1.53.37-1.47.5-2.3 1.43-2.07 3.07.43 3.13 6.18 4.06 5.7-2.06V1.8h3.82Z"/></svg>
+                </a>
+                <a class="social-link" href="https://vk.ru/navywhale_ru" target="_blank" rel="noopener" aria-label="VK">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.92 17.92c-7.86 0-12.34-5.39-12.53-14.36h3.94c.13 6.58 3.03 9.37 5.32 9.94V3.56h3.71v5.68c2.26-.24 4.64-2.84 5.44-5.68h3.71c-.61 3.5-3.2 6.1-5.04 7.17 1.84.87 4.79 3.14 5.91 7.19h-4.08c-.87-2.72-3.05-4.82-5.94-5.1v5.1h-.44Z"/></svg>
+                </a>
+                <a class="social-link" href="https://youtube.com/@navywhale_ru?si=rK4DNIDn48uWjLm-" target="_blank" rel="noopener" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.13C19.55 3.56 12 3.56 12 3.56s-7.55 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.13c1.85.51 9.4.51 9.4.51s7.55 0 9.4-.5a3 3 0 0 0 2.1-2.14A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© 2026 Navy Whale Armwrestling Sports Team. Все права защищены.</div>
+        <div class="footer-links">
+          <a href="#top">Главная</a>
+          <a href="#products">Товары</a>
+          <a href="#contacts">Контакты</a>
+          <a href="mailto:order@navywhale-merch.ru">order@navywhale-merch.ru</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
